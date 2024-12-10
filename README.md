@@ -7,7 +7,9 @@
 What are the migration trends of the Black Oak and the Red Pine tree species in the Eastern United States? Are there more saplings taking root further north? Are there fewer adult trees in the south? 
 By understanding where the saplings and adults are the most dense, we can see a clearer picture of if and/or where the Black Oak and Red Pine tree species are potentially migrating. This could lead to further understanding of how our evolving climate trends will shape our landscape in the near future. 
 
-### DATA
+## DATA
+
+
 ## IV Data: Code and Output
 ![{504AB06F-DE92-48E3-823A-BD6A4108AB1C}](https://github.com/user-attachments/assets/f0644595-5d14-40e6-aee5-1ee28ad47d00)
 ![4EFA578D-28D9-4B11-8F24-F3E756484135](https://github.com/user-attachments/assets/87db0469-60de-4cd9-84e9-494d2dabece7)
