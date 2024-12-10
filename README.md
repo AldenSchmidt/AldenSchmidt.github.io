@@ -7,7 +7,7 @@ By understanding where the saplings and adults are the most dense, we can see a 
 
 ## DATA & METHODS
 
-I use the FIADB to gather data on my two study species to geographically map where they based on their sapling and adult diameter at different latitudes in order to predict where they are heading. Because the FIADB predominantly covers the United States, I am limiting my research to the range of the tree species in the Eastern United States. For both species respectively, I calculate the sum of the pixels that I aggregate by 1% latitudinally and longitudinally to find their range over the eastern United States. 
+I use the FIADB to gather data on my two study species to geographically map where they based on their sapling and adult diameter at different latitudes in order to predict where they are heading. Because the FIADB predominantly covers the United States, I am limiting my research to the range of the tree species in the Eastern United States. For both species respectively, I calculate the sum of the pixels that I aggregate by 1% latitudinally and longitudinally to find their range over the U.S. 
 
 
 ### IV Data: Code and Output
