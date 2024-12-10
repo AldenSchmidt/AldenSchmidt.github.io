@@ -118,9 +118,9 @@ Red Pine: Adult vs Sapling
 Black Oak: Adult vs Sapling
 ![A21FAB08-9AB5-4EB3-B1F6-9AF5DE1AB7BC](https://github.com/user-attachments/assets/fa3b7830-9d1c-4582-923f-54638efa7ce8)
 
-Red Pine: Adult vs Sapling 
+Red Pine: Adult vs Sapling --
 No sapings at southern limit and the importance value remains at a constant latitude. 
 
-Black Oak: Adult vs Sapling
+Black Oak: Adult vs Sapling --
 More saplings at southern limit and sharp increase of importance value as latitude increases.
 
