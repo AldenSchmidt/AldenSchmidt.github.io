@@ -11,7 +11,7 @@ library(classInt)
 library(gridExtra)
 library(eHOF)
 
-iv <- readRDS ("C:\\Users\\schmidt1\\Downloads\\IV_data.RDS")
+iv <- readRDS ("~/Downloads/IV_data (1).RDS")
 
 hof_plot <- function(species){
   trees_data <- iv %>%
@@ -53,3 +53,42 @@ hof_plot <- function(species){
 hof_plot("black oak")
 unique(iv$COMMON_NAME)
 hof_plot("red pine")
+
+
+fia <- readRDS("~/Downloads/FIA_tree_master1 (2).RDS")
+fia
+head(fia_spcd)
+first(unique(fia$GRIDID))
+mean(fia_spcd$DIA, na.rm = TRUE)
+fia_grid <- fia[fia$GRIDID == unique(fia$GRIDID)[1],]
+mean(fia_grid$DIA, na.rm = TRUE)
+results <- list()
+results
+tree <- fia_spcd[fia$COMMON_NAME == "black oak"] %>%
+  head(10)
+target <- fia %>%
+  group_by(GRIDID, LAT, LON, COMMON_NAME, DIA, HT, FGROWCFAL, FMORTCFAL, FREMVCFAL) %>%
+  filter(COMMON_NAME %in% c("red pine","black oak"))
+
+baby <- target %>%
+  filter(DIA <= 3.5)
+red_pine_baby <- baby %>%
+  filter(COMMON_NAME == "red pine")
+black_oak_baby <- baby %>%
+  filter(COMMON_NAME == "black oak")
+
+adult <- target %>%
+  filter(DIA >= 3.6)
+red_pine_adult <- adult %>%
+  filter(COMMON_NAME == "red pine")
+black_oak_adult <- adult %>%
+  filter(COMMON_NAME == "black oak")
+
+ggplot()+
+  geom_point(data = red_pine_baby, aes(x = LON, y = LAT), size = 1,color = "red") +
+  geom_point(data = red_pine_adult, aes(x = LON, y = LAT), size = 1, color = "grey10")
+  
+ggplot()+
+  geom_point(data = black_oak_baby, aes(x = LON, y = LAT), size = 1, color = "red") +
+  geom_point(data = black_oak_adult, aes(x = LON, y = LAT), size = 1, color = "grey10")
+
