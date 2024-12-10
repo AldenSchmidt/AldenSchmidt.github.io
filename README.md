@@ -4,4 +4,4 @@
 - Work description
 - [adv GIS repository](https://github.com/AldenSchmidt/AldenSchmidt.github.io)
 ## IV Data Output
-![image](https://github.com/user-attachments/assets/e8f7519e-b516-4924-9a55-2b385e3dced3)
+
