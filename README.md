@@ -3,7 +3,7 @@
 ## Biogeography course final project site
 - [adv GIS repository](https://github.com/AldenSchmidt/AldenSchmidt.github.io)
 
-## Introduction
+## INTRODUCTION
 What are the migration trends of the Black Oak and the Red Pine tree species in the Eastern United States? Are there more saplings taking root further north? Are there fewer adult trees in the south? 
 By understanding where the saplings and adults are the most dense, we can see a clearer picture of if and/or where the Black Oak and Red Pine tree species are potentially migrating. This could lead to further understanding of how our evolving climate trends will shape our landscape in the near future. 
 
