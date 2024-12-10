@@ -9,11 +9,7 @@ By understanding where the saplings and adults are the most dense, we can see a 
 
 ## DATA & METHODS
 
-Data Description:
-I will be using the FIADB to gather data on my two study species to geographically map where they are predicted to move based on their mean diameter at different latitudes, as well as where they are currently. Because the FIADB predominantly covers the United States, I am limiting my research to the range of the tree species in the Eastern United States. For both species respectively, I will calculate the sum of the pixels that I will aggregate by 1% latitudinally and longitudinally to find their range over the eastern United States. 
-
-Data Analysis Techniques:
-By using time series analysis, I can examine data points collected at regular intervals in order to find trends or patterns over time. I will also be using the confidence interval to set my parameters of study. I will use the 95% confidence interval, because it provides a balance of a strict filter of data that may have been gathered with biases and a confidence that I will only have a chance of being wrong 5% of the time when testing the data.
+I use the FIADB to gather data on my two study species to geographically map where they based on their sapling and adult diameter at different latitudes in order to predict where they are heading. Because the FIADB predominantly covers the United States, I am limiting my research to the range of the tree species in the Eastern United States. For both species respectively, I calculate the sum of the pixels that I aggregate by 1% latitudinally and longitudinally to find their range over the eastern United States. 
 
 
 ### IV Data: Code and Output
