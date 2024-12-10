@@ -66,7 +66,7 @@ hof_plot("black oak")
 unique(iv$COMMON_NAME)
 hof_plot("red pine")
 
-## FIA Coding Process
+### FIA Coding Process
 FIA:
 fia <- readRDS("~/Downloads/FIA_tree_master1 (2).RDS")
 fia
