@@ -1,7 +1,5 @@
 
 # Black Oak and Red Pine Distribution in the Eastern United States
-## Biogeography course final project site
-- [adv GIS repository](https://github.com/AldenSchmidt/AldenSchmidt.github.io)
 
 ## INTRODUCTION
 What are the migration trends of the Black Oak and the Red Pine tree species in the Eastern United States? Are there more saplings taking root further north? Are there fewer adult trees in the south? 
