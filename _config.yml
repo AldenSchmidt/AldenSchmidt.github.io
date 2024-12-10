@@ -2,3 +2,54 @@ title: test site
 #logo
 description: environmental science | BA
 theme: jekyll-theme-minimal
+
+library(ggplot2)
+library(dplyr)
+library(sf)
+library(rnaturalearth)
+library(classInt)
+library(gridExtra)
+library(eHOF)
+
+iv <- readRDS ("C:\\Users\\schmidt1\\Downloads\\IV_data.RDS")
+
+hof_plot <- function(species){
+  trees_data <- iv %>%
+    filter(COMMON_NAME == species)
+  lat_seq <- seq(from = floor(min(trees_data$LAT)), to = ceiling(max(trees_data$LAT)), by = 0.5)
+  trees_bands <- data.frame(
+    Lat_band = lat_seq,
+    avg_IV = numeric(length(lat_seq))
+  )
+  for (i in 1:length(lat_seq)){
+    lat_min <- lat_seq[i] - 0.5
+    lat_max <- lat_seq[i] + 0.5
+    band_data <- trees_data %>%
+      filter(LAT >= lat_min & LAT <= lat_max)
+    trees_bands$avg_IV[i] <- mean(band_data$IV, na.rm = TRUE)
+  }
+  trees_bands <- trees_bands[complete.cases(trees_bands$avg_IV),]
+  hof_model <- HOF(
+    trees_bands$avg_IV,
+    trees_bands$Lat_band,
+    modeltypes = c("I","II","III","IV","V"),
+    family = gaussian,
+    bootstrap = 100,
+    test = 'AIC'
+  )
+  best_model <- pick.model(hof_model, modeltypes = c("I","II","III","IV","V"), test = 'AIC')
+  predicted_response <- predict(hof_model, model = best_model,
+                                newdata = seq(min(trees_bands$Lat_band), max(trees_bands$Lat_band), by = 0.1))
+  scaled_response <- predicted_response * max(trees_bands$avg_IV)
+  ggplot(trees_bands, aes(x = Lat_band, y = avg_IV)) +
+    geom_point(color = "grey60") +
+    geom_line(data = data.frame(lat_band = seq(min(trees_bands$Lat_band),
+                                               max(trees_bands$Lat_band), by = 0.1),
+                                predicted_IV = scaled_response),
+              aes(x = lat_band, y = predicted_IV), color = "black") +
+    geom_vline(xintercept = Para(hof_model, model = best_model)$opt, color = "red", linetype = "dashed") +
+    labs(title = paste("Latitudinal IV pattern", species), x = "Latitude", y = "IV (Importance Value")
+}
+hof_plot("black oak")
+unique(iv$COMMON_NAME)
+hof_plot("red pine")
