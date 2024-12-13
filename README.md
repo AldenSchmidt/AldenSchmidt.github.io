@@ -3,11 +3,17 @@
 
 ## INTRODUCTION
 What are the migration trends of the Black Oak and the Red Pine tree species in the United States? Are there more saplings taking root further north? Are there fewer adult trees in the south? 
-By understanding where the saplings and adults are the most dense, we can see a clearer picture of if and/or where the Black Oak and Red Pine tree species are potentially migrating. This could lead to further understanding of how our evolving climate trends will shape our landscape in the near future. 
+By understanding where the saplings and adults are the most dense, we can get a clearer picture of if and/or where the Black Oak and Red Pine tree species are potentially migrating. This could lead to further understanding how our evolving climate trends will shape our landscape in the near future. 
 
 ## DATA & METHODS
+To start off, I installed ggplot2, dplyr, sf, rnaturalearth, classint, gridExtra, and eHOF to use as my functions for both my IV and my FIA data collection. After downloading the libraries, I made sure my data from my files could be read. If this stage did not work, I would need to make sure everything had been loaded properly or my codes would not work. 
 
-I use the FIADB to gather data on my two study species to geographically map where they based on their sapling and adult diameter at different latitudes in order to predict where they are heading. Because the FIADB predominantly covers the United States, I am limiting my research to the range of the tree species in the Eastern United States. For both species respectively, I calculate the sum of the pixels that I aggregate by 1% latitudinally and longitudinally to find their range over the U.S. 
+For my IV data collection:
+
+
+For my FIA data collection:
+I use the FIA database (FIADB) to gather data on my two study species to geographically map where they currently are based on their sapling and adult diameter at different latitudes in order to predict where they are heading. I identify the "babies"--this is how they are labeled in my code--based on a diameter of less than or equal to (<=) 3.5 and adults greater than or equal to (>=) 3.6 as input in the FIA system.
+For both species respectively, I calculate the sum of the pixels that I aggregate by 1% latitudinally and longitudinally to find their range over the U.S. To illustrate the two categories I have set for the trees, I made the red dots on the map the representation for the "babies" and grey10 for the "adults" of both species.
 
 
 ### IV Data: Code and Output
@@ -113,7 +119,7 @@ Black Oak: Adult vs Sapling
 ![A21FAB08-9AB5-4EB3-B1F6-9AF5DE1AB7BC](https://github.com/user-attachments/assets/fa3b7830-9d1c-4582-923f-54638efa7ce8)
 
 Red Pine: Adult vs Sapling --
-No sapings at southern limit and the importance value remains at a constant latitude. 
+No saplings at southern limit and the importance value remains at a constant latitude between approximately 38 degrees and 58 degrees latitude. 
 
 Black Oak: Adult vs Sapling --
 More saplings at southern limit and sharp increase of importance value as latitude increases.
