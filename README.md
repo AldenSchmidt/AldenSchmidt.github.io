@@ -2,7 +2,7 @@
 # Black Oak and Red Pine Distribution in the United States
 
 ## INTRODUCTION
-For my report, I researched what the migration trends of the Black Oak and the Red Pine tree species in the United States. Are there more saplings taking root further north? Are there fewer adult trees in the south? 
+For my report, I researched the migration trends of the Black Oak and the Red Pine tree species in the United States and what it could mean as it pertains to the potential of tree migrations influenced by the global warming trend we are experiencing. Are there more saplings taking root further north? Are there fewer adult trees in the south? 
 By understanding where the saplings and adults are the most dense, we can get a clearer picture of if and/or where the Black Oak and Red Pine tree species are potentially migrating. This could lead to further understanding of how our evolving climate trends will shape our landscape in the near future. 
 
 ## DATA & METHODS
