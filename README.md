@@ -113,16 +113,27 @@ hof_plot("red pine")
 
 
 ### FIA Coding Process
+
 FIA:
+
 fia <- readRDS("~/Downloads/FIA_tree_master1 (2).RDS")
+
 fia
+
 head(fia_spcd)
+
 first(unique(fia$GRIDID))
+
 mean(fia_spcd$DIA, na.rm = TRUE)
+
 fia_grid <- fia[fia$GRIDID == unique(fia$GRIDID)[1],]
+
 mean(fia_grid$DIA, na.rm = TRUE)
+
 results <- list()
+
 results
+
 tree <- fia_spcd[fia$COMMON_NAME == "black oak"] %>%
   head(10)
 target <- fia %>%
