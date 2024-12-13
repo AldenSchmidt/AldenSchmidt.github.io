@@ -1,15 +1,15 @@
 
-# Black Oak and Red Pine Distribution in the Eastern United States
+# Black Oak and Red Pine Distribution in the United States
 
 ## INTRODUCTION
-What are the migration trends of the Black Oak and the Red Pine tree species in the United States? Are there more saplings taking root further north? Are there fewer adult trees in the south? 
-By understanding where the saplings and adults are the most dense, we can get a clearer picture of if and/or where the Black Oak and Red Pine tree species are potentially migrating. This could lead to further understanding how our evolving climate trends will shape our landscape in the near future. 
+For my report, I researched what the migration trends of the Black Oak and the Red Pine tree species in the United States. Are there more saplings taking root further north? Are there fewer adult trees in the south? 
+By understanding where the saplings and adults are the most dense, we can get a clearer picture of if and/or where the Black Oak and Red Pine tree species are potentially migrating. This could lead to further understanding of how our evolving climate trends will shape our landscape in the near future. 
 
 ## DATA & METHODS
 To start off, I installed ggplot2, dplyr, sf, rnaturalearth, classint, gridExtra, and eHOF to use as my functions for both my IV and my FIA data collection. After downloading the libraries, I made sure my data from my files could be read. If this stage did not work, I would need to make sure everything had been loaded properly or my codes would not work. 
 
 For my IV (Importance Value) data collection:
-I almost straight away set up my hof plot with the parameters I needed. I added a function to gather the species by common name from the database with a floor to ceiling count by 0.5. This data is found under the new name trees_data and the data under trees_band functions as a data frame for latitude (x-axis) and average IV (y-axis). Within my predicted response, my new sequence data is counted by 0.1. I set my aesthetic color to black, my geometery points as grey90, and my line type as red and dashed in order to bring the viewer's attention to the peak of the IV on the latitudinal scale. To pull up the graphs, I input "hof_plot("black oak")" and "hof_plot("red pine")" to run the results. I had to trouble shoot this a few times, but used previous lines of code from our classes as an example. Finally, when I ran the code as described above and pictured below, it pulled up the graphs porperly. 
+I set up my hof plot with the parameters I needed. I added a function to gather the species by common name from the database with a floor to ceiling count by 0.5. This data is found under the new name trees_data and the data under trees_bands functions as a data frame for latitude (x-axis) and average IV (y-axis). Within my predicted response, my new sequence data is counted by 0.1. I set my aesthetic color to black, my geometery points as grey90, and my line type as red and dashed in order to bring the viewer's attention to the peak of the IV on the latitudinal scale. To pull up the graphs, I input "hof_plot("black oak")" and "hof_plot("red pine")" to run the results. I had to trouble shoot this a few times, but used previous lines of code from our classes as an example. Finally, when I ran the code as described above and pictured below, it pulled up the graphs properly. 
 
 For my FIA data collection:
 Similarly for my FIA coding, I read my FIA file into the system and started by giving each function a name in consecutive order of operation. I used the FIA database (FIADB) to gather data on my two study species to geographically map where they currently are based on their sapling and adult diameter at different latitudes in order to predict where they are heading. I identify the "babies"--this is how they are labeled in my code--based on a diameter of less than or equal to (<=) 3.5 and adults are defined as greater than or equal to (>=) 3.6 in FIA. 
