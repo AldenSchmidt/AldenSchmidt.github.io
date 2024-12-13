@@ -32,20 +32,35 @@ library(eHOF)
 iv <- readRDS ("~/Downloads/IV_data (1).RDS")
 
 hof_plot <- function(species){
+
   trees_data <- iv %>%
+  
     filter(COMMON_NAME == species)
+    
   lat_seq <- seq(from = floor(min(trees_data$LAT)), to = ceiling(max(trees_data$LAT)), by = 0.5)
+  
   trees_bands <- data.frame(
+  
     Lat_band = lat_seq,
+    
     avg_IV = numeric(length(lat_seq))
+    
   )
+  
   for (i in 1:length(lat_seq)){
+  
     lat_min <- lat_seq[i] - 0.5
+    
     lat_max <- lat_seq[i] + 0.5
+    
     band_data <- trees_data %>%
+    
       filter(LAT >= lat_min & LAT <= lat_max)
+      
     trees_bands$avg_IV[i] <- mean(band_data$IV, na.rm = TRUE)
+    
   }
+  
   trees_bands <- trees_bands[complete.cases(trees_bands$avg_IV),]
   hof_model <- HOF(
     trees_bands$avg_IV,
