@@ -135,34 +135,54 @@ results <- list()
 results
 
 tree <- fia_spcd[fia$COMMON_NAME == "black oak"] %>%
+
   head(10)
+  
 target <- fia %>%
+
   group_by(GRIDID, LAT, LON, COMMON_NAME, DIA, HT, FGROWCFAL, FMORTCFAL, FREMVCFAL) %>%
+  
   filter(COMMON_NAME %in% c("red pine","black oak"))
 
 baby <- target %>%
+
   filter(DIA <= 3.5)
+  
 red_pine_baby <- baby %>%
+
   filter(COMMON_NAME == "red pine")
+  
 black_oak_baby <- baby %>%
+
   filter(COMMON_NAME == "black oak")
 
 adult <- target %>%
+
   filter(DIA >= 3.6)
+  
 red_pine_adult <- adult %>%
+
   filter(COMMON_NAME == "red pine")
+  
 black_oak_adult <- adult %>%
+
   filter(COMMON_NAME == "black oak")
 
 ggplot()+
+
   geom_point(data = red_pine_baby, aes(x = LON, y = LAT), size = 1,color = "red") +
+  
   geom_point(data = red_pine_adult, aes(x = LON, y = LAT), size = 1, color = "grey10")
   
 ggplot()+
+
   geom_point(data = black_oak_baby, aes(x = LON, y = LAT), size = 1, color = "red") +
+  
   geom_point(data = black_oak_adult, aes(x = LON, y = LAT), size = 1, color = "grey10")
 
+
 ## RESULTS & DISCUSSION
+
 Red Pine: Adult vs Sapling 
 ![EBDCEAC8-5AA1-4055-9E9D-E42A6FF87670](https://github.com/user-attachments/assets/b9a0e6c3-7120-4d29-98f9-2380d440d28d)
 
