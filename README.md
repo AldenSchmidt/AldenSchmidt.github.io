@@ -62,30 +62,55 @@ hof_plot <- function(species){
   }
   
   trees_bands <- trees_bands[complete.cases(trees_bands$avg_IV),]
+  
   hof_model <- HOF(
+  
     trees_bands$avg_IV,
+    
     trees_bands$Lat_band,
+    
     modeltypes = c("I","II","III","IV","V"),
+    
     family = gaussian,
+    
     bootstrap = 100,
+    
     test = 'AIC'
+    
   )
+  
   best_model <- pick.model(hof_model, modeltypes = c("I","II","III","IV","V"), test = 'AIC')
+  
   predicted_response <- predict(hof_model, model = best_model,
+  
                                 newdata = seq(min(trees_bands$Lat_band), max(trees_bands$Lat_band), by = 0.1))
+                                
   scaled_response <- predicted_response * max(trees_bands$avg_IV)
+  
   ggplot(trees_bands, aes(x = Lat_band, y = avg_IV)) +
+  
     geom_point(color = "grey60") +
+    
     geom_line(data = data.frame(lat_band = seq(min(trees_bands$Lat_band),
+    
                                                max(trees_bands$Lat_band), by = 0.1),
+                                               
                                 predicted_IV = scaled_response),
+                                
               aes(x = lat_band, y = predicted_IV), color = "black") +
+              
     geom_vline(xintercept = Para(hof_model, model = best_model)$opt, color = "red", linetype = "dashed") +
+    
     labs(title = paste("Latitudinal IV pattern", species), x = "Latitude", y = "IV (Importance Value")
+    
 }
+
 hof_plot("black oak")
+
 unique(iv$COMMON_NAME)
+
 hof_plot("red pine")
+
 
 ### FIA Coding Process
 FIA:
